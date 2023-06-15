@@ -1,5 +1,5 @@
 from urban import db
-
+#vbdjhfjkjfhvnxjnkjnjnjknk
 class Product(db.Model):
     __tablename__ = 'products'
     id = db.Column(db.Integer, primary_key=True)
