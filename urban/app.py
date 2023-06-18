@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///urban.db'
 db= SQLAlchemy(app)
-db.create_all()
+# db.create_all()
 
 @app.route('/')
 @app.route('/home')
