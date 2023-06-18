@@ -31,6 +31,12 @@ def electronics():
     return render_template('electronics.html')
 
 
+@app.route('/fashion')
+def fashion():
+    return render_template('fashion.html')
+
+
+
 @app.route('/furniture')
 def furniture():
     return render_template('furniture.html')

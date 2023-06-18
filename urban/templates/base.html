@@ -27,28 +27,28 @@
 						</ul>
 					</div>
 					<div class="col-lg-6">
-						<p class="text-end mb-0">Need help? Call us: <a href="#" class="fw-semibold">(+91) 9876 5432 10</a>  or <a href="#" class="fw-semibold">info@urban-thrifts.com</a></p>
+						<p class="text-end mb-0">Need help? Call us: <a href="{{ url_for('contact')}}" class="fw-semibold">(+91) 9876 5432 10</a>  or <a href="{{ url_for('contact')}}" class="fw-semibold">info@urban-thrifts.com</a></p>
 					</div>
 				</div>
 			</div>
 		</div>
 		<nav class="navbar navbar-expand-lg py-3 bg-white brand-shadow">
 			<div class="container">
-				<a class="navbar-brand fw-bold" href="index.html">The Urban Thrift</a>
+				<a class="navbar-brand fw-bold" href="{{ url_for('index')}}">The Urban Thrift</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav navbar-nav mx-auto mb-2 mb-lg-0">
-						<li class="nav-item me-3"><a class="nav-link active" href="index.html">Home</a></li>
+						<li class="nav-item me-3"><a class="nav-link active" href="{{url_for('index')}}">Home</a></li>
 						<li class="nav-item me-3"><a class="nav-link" href="#">About</a></li>
 						<li class="nav-item dropdown me-3">
 							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
 							<ul class="dropdown-menu rounded-1 brand-shadow">
 								<li><a class="dropdown-item" href="{{url_for('books')}}">Books</a></li>
-								<li><a class="dropdown-item" href="fashion.html">Fashion</a></li>
-								<li><a class="dropdown-item" href="electronics.html">Electronics</a></li>
-								<li><a class="dropdown-item" href="furniture.html">Furniture</a></li>
+								<li><a class="dropdown-item" href="{{url_for('fashion')}}">Fashion</a></li>
+								<li><a class="dropdown-item" href="{{url_for('electronics')}}">Electronics</a></li>
+								<li><a class="dropdown-item" href="{{url_for('furniture')}}">Furniture</a></li>
 							</ul>
 						</li>
 						<li class="nav-item me-3"><a class="nav-link" href="#">Blog</a></li>
@@ -76,19 +76,19 @@
 					<div class="col-12 text-center">
 						<div class="footer-brand fw-bold text-white mb-2">The Urban Thrifts</div>
 						<div class="footer-links mb-4">
-							<a href="index.html" class="mx-3">Home</a>
+							<a href="{{url_for('index')}}" class="mx-3">Home</a>
 							<a href="#" class="mx-3">About</a>
-							<a href="books.html" class="mx-3">Books</a>
-							<a href="fashion.html" class="mx-3">Fashion</a>
-							<a href="electronics.html" class="mx-3">Electronics</a>
-							<a href="furniture.html" class="mx-3">Furniture</a>
+							<a href="{{url_for('books')}}" class="mx-3">Books</a>
+							<a href="{{url_for('fashion')}}" class="mx-3">Fashion</a>
+							<a href="{{url_for('electronics')}}" class="mx-3">Electronics</a>
+							<a href="{{url_for('furniture')}}" class="mx-3">Furniture</a>
 							<a href="#" class="mx-3">Blog</a>
 							<a href="{{ url_for('contact')}}" class="mx-3">Contact</a>
 						</div>
 						<hr>
 						<div class="footer-contact">
 							<div class="fw-bold mb-2">Need Help?</div>
-							<h4><a href="#">(+91) 9876 543 210</a></h4>
+							<h4><a href="{{ url_for('contact')}}">(+91) 9876 543 210</a></h4>
 						</div>
 					</div>
 				</div>
