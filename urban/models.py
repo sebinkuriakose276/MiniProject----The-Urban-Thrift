@@ -1,4 +1,4 @@
-from urban import db
+from app import db
 #vbdjhfjkjfhvnxjnkjnjnjknk
 class Product(db.Model):
     __tablename__ = 'products'
