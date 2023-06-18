@@ -26,6 +26,15 @@ def login():
     return render_template('login.html')
 
 
+@app.route('/checkout')
+def checkout():
+    return render_template('checkout.html')
+
+@app.route('/compelete')
+def compelete():
+    return render_template('compelete.html')
+
+
 @app.route('/electronics')
 def electronics():
     return render_template('electronics.html')
