@@ -1,64 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Profile | The Urban Thrift</title>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css">
-</head>
 <body>
-
-	<!-- =====[HEADER]===== -->
-	<header class="site-header">
-		<div class="header-top py-2">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6">
-						<ul class="list-unstyled d-flex mb-0">
-							<li class="pe-4"><a href="#">My account</a></li>
-							<li class="pe-4"><a href="cart.html">Cart</a></li>
-							<li class="pe-4"><a href="#">Wishlist</a></li>
-						</ul>
-					</div>
-					<div class="col-lg-6">
-						<p class="text-end mb-0">Need help? Call us: <a href="#" class="fw-semibold">(+91) 9876 5432 10</a>  or <a href="#" class="fw-semibold">info@urban-thrifts.com</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<nav class="navbar navbar-expand-lg py-3 bg-white brand-shadow">
-			<div class="container">
-				<a class="navbar-brand fw-bold" href="index.html">The Urban Thrift</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav navbar-nav mx-auto mb-2 mb-lg-0">
-						<li class="nav-item me-3"><a class="nav-link active" href="index.html">Home</a></li>
-						<li class="nav-item me-3"><a class="nav-link" href="#">About</a></li>
-						<li class="nav-item dropdown me-3">
-							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-							<ul class="dropdown-menu rounded-1 brand-shadow">
-								<li><a class="dropdown-item" href="books.html">Books</a></li>
-								<li><a class="dropdown-item" href="fashion.html">Fashion</a></li>
-								<li><a class="dropdown-item" href="electronics.html">Electronics</a></li>
-								<li><a class="dropdown-item" href="furniture.html">Furniture</a></li>
-							</ul>
-						</li>
-						<li class="nav-item me-3"><a class="nav-link" href="#">Blog</a></li>
-						<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-					</ul>
-					<ul class="navbar-nav">
-						<li class="nav-item me-3"><a class="nav-link" href="login.html">Login / Register</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</header>
-
 	<!-- =====[SECTION PROFILE]===== -->
 	<section class="section-profile-main">
 		<div class="container">
@@ -120,50 +65,8 @@
 		</div>
 	</section>
 
-	<!-- =====[FOOTER]===== -->
-	<footer class="site-footer">
-		<div class="footer-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-12 text-center">
-						<div class="footer-brand fw-bold text-white mb-2">The Urban Thrifts</div>
-						<div class="footer-links mb-4">
-							<a href="index.html" class="mx-3">Home</a>
-							<a href="#" class="mx-3">About</a>
-							<a href="books.html" class="mx-3">Books</a>
-							<a href="fashion.html" class="mx-3">Fashion</a>
-							<a href="electronics.html" class="mx-3">Electronics</a>
-							<a href="furniture.html" class="mx-3">Furniture</a>
-							<a href="#" class="mx-3">Blog</a>
-							<a href="contact.html" class="mx-3">Contact</a>
-						</div>
-						<hr>
-						<div class="footer-contact">
-							<div class="fw-bold mb-2">Need Help?</div>
-							<h4><a href="#">(+91) 9876 543 210</a></h4>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer-bottom py-3">
-			<div class="container">
-				<div class="row">
-					<div class="col-6">
-						<div>© 2023 The Urban Thrifts. All rights reserved.</div>
-					</div>
-					<div class="col-6">
-						<div class="text-end">
-							<img src="img/payment-icon.png" alt="media" class="d-inline-block">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/script.js"></script>
+	
 </body>
 </html>
+
+{% endblock %}
