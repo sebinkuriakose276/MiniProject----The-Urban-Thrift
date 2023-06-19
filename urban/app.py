@@ -3,7 +3,18 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///urban.db'
 db= SQLAlchemy(app)
-# db.create_all()
+with app.app_context():
+    db.create_all()
+
+
+class Products(db.Model):
+    id=db.Column(db.Integer(), primary_key=True)
+    image= db.Column(db.String(length=30), nullable=False)
+    name= db.Column(db.String(length=30), nullable=False)
+    price= db.Column(db.Integer(), nullable=False)
+    type= db.Column(db.String(length=30), nullable=False)
+    
+    
 
 @app.route('/')
 @app.route('/home')
@@ -14,6 +25,10 @@ def index():
 @app.route('/books')
 def books():
     return render_template('books.html')
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
 
 
 @app.route('/contact')
