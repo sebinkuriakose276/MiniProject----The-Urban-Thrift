@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for, session
+from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///urban.db'
@@ -19,6 +20,11 @@ class Users(db.Model):
     address= db.Column(db.String(length=30), nullable=False)
     email= db.Column(db.String(length=30), nullable=False)
 
+    # def __init__(self,name,username,password):
+    #     self.name = name
+    #     self.username = username
+    #     self.password = password
+
 with app.app_context():
     db.create_all()
   
@@ -33,7 +39,7 @@ def index():
 @app.route('/books')
 def books():
     products = Products.query.all()
-    products = Products.query.filter_by(type="Books")
+    # products = Products.query.filter_by(type="Books")
     return render_template('books.html', products=products)
 
 @app.route('/register')
@@ -46,9 +52,23 @@ def contact():
     return render_template('contact.html')
 
 
-@app.route('/login')
-def login():
-    return render_template('login.html')
+@app.route('/login' , methods=['GET', 'POST'])
+# def login():
+#     if request.method == 'POST':
+#         username = request.form['username']
+#         password = request.form['password']
+#         user = Users.query.filter_by(username=username).first()
+
+#         if user and check_password_hash(user.password, password):
+#             # Authentication successful
+#             session['user_id'] = user.id
+#             return redirect(url_for('index'))
+#         else:
+#             # Authentication failed
+#             error = 'Invalid username or password'
+#             return render_template('login.html', error=error)
+
+#     return render_template('login.html')
 
 
 @app.route('/checkout')
