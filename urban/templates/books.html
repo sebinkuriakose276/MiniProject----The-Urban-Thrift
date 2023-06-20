@@ -157,136 +157,27 @@
 				</div>
 				<div class="col-xl-9 col-lg-8 ps-lg-5 ps-xl-5 ps-xxl-5">
 					<div class="row">
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="{{ url_for('static', filename='img/product-book-1.jpg') }}" alt="media">
+								{% for pdt in products %}
+									<div class="col-xl-4 col-lg-6">
+										<div class="card product-card">
+											<!-- <a href="#" class="card-media"> -->
+												<img src= "{{pdt.image }}" alt="media">
+				
+				
+											
+											<div class="card-body">
+												<div class="card-sub-title">{{ pdt.type }}</div>
+												<h5 class="card-title">{{ pdt.name}}</h5>
+												<div class="card-price">
+														<span class="card-price-new">₹ {{ pdt.price}}</span>
+												</div>
+												<button class="btn btn-danger">Add to cart</button>
+											</div>
+										</div>
+									</div>
 
-
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Book</div>
-									<h5 class="card-title">Food & Health Journal</h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 360.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<span class="badge text-bg-danger">Sale</span>
-									<img src="img/product-book-2.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Book</div>
-									<h5 class="card-title">The Art of the Surf</h5>
-									<div class="card-price">
-										<span class="card-price-old">₹ 345.00</span>
-										<span class="card-price-new">₹ 300.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="img/product-book-3.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Book</div>
-									<h5 class="card-title">Feelings Are Lost At Sea</h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 450.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<span class="badge text-bg-danger">Sale</span>
-									<img src="img/product-book-4.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Book</div>
-									<h5 class="card-title">The Little Dancer</h5>
-									<div class="card-price">
-										<span class="card-price-old">₹ 240.00</span>
-										<span class="card-price-new">₹ 200.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="img/product-book-1.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Book</div>
-									<h5 class="card-title">Food & Health Journal</h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 360.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<span class="badge text-bg-danger">Sale</span>
-									<img src="img/product-book-2.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Book</div>
-									<h5 class="card-title">The Art of the Surf</h5>
-									<div class="card-price">
-										<span class="card-price-old">₹ 345.00</span>
-										<span class="card-price-new">₹ 300.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="img/product-book-3.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Book</div>
-									<h5 class="card-title">Feelings Are Lost At Sea</h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 450.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<span class="badge text-bg-danger">Sale</span>
-									<img src="img/product-book-4.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Book</div>
-									<h5 class="card-title">The Little Dancer</h5>
-									<div class="card-price">
-										<span class="card-price-old">₹ 240.00</span>
-										<span class="card-price-new">₹ 200.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
+								{%  endfor %}
+						</div>	
 					</div>
 				</div>
 			</div>

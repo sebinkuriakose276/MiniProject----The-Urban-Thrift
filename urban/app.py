@@ -3,8 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///urban.db'
 db= SQLAlchemy(app)
-with app.app_context():
-    db.create_all()
 
 
 class Products(db.Model):
@@ -13,7 +11,17 @@ class Products(db.Model):
     name= db.Column(db.String(length=30), nullable=False)
     price= db.Column(db.Integer(), nullable=False)
     type= db.Column(db.String(length=30), nullable=False)
-    
+
+class Users(db.Model):
+    id=db.Column(db.Integer(), primary_key=True)
+    username= db.Column(db.String(length=30), nullable=False)
+    first_name= db.Column(db.String(length=30), nullable=False)
+    address= db.Column(db.String(length=30), nullable=False)
+    email= db.Column(db.String(length=30), nullable=False)
+
+with app.app_context():
+    db.create_all()
+  
     
 
 @app.route('/')
@@ -24,7 +32,9 @@ def index():
 
 @app.route('/books')
 def books():
-    return render_template('books.html')
+    products = Products.query.all()
+    products = Products.query.filter_by(type="Books")
+    return render_template('books.html', products=products)
 
 @app.route('/register')
 def register():
@@ -67,3 +77,5 @@ def furniture():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
