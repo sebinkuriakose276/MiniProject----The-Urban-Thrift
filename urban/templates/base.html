@@ -41,7 +41,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav navbar-nav mx-auto mb-2 mb-lg-0">
 						<li class="nav-item me-3"><a class="nav-link active" href="{{url_for('index')}}">Home</a></li>
-						<li class="nav-item me-3"><a class="nav-link" href="#">About</a></li>
+						<li class="nav-item me-3"><a class="nav-link" href="{{url_for('about')}}">About</a></li>
 						<li class="nav-item dropdown me-3">
 							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
 							<ul class="dropdown-menu rounded-1 brand-shadow">
@@ -95,7 +95,7 @@
 							<a href="{{url_for('index')}}" class="mx-3">Home</a>
 							<a href="#" class="mx-3">About</a>
 							<a href="{{url_for('books')}}" class="mx-3">Books</a>
-							<a href="{{url_for('fashion')}}" class="mx-3">Fashion</a>
+							<a href="{{ url_for('fashion')}}" class="mx-3">Fashion</a>
 							<a href="{{url_for('electronics')}}" class="mx-3">Electronics</a>
 							<a href="{{url_for('furniture')}}" class="mx-3">Furniture</a>
 							<a href="#" class="mx-3">Blog</a>

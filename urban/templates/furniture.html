@@ -164,81 +164,25 @@
 				</div>
 				<div class="col-xl-9 col-lg-8 ps-lg-5 ps-xl-5 ps-xxl-5">
 					<div class="row">
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="img/product-furniture-1.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Decorative</div>
-									<h5 class="card-title">Vintage Chair</h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 4675.00</span>
+						{% for pdt in products %}
+									<div class="col-xl-4 col-lg-6">
+										<div class="card product-card">
+											<!-- <a href="#" class="card-media"> -->
+												<img src= "{{pdt.image }}" alt="media">
+				
+				
+											
+											<div class="card-body">
+												<div class="card-sub-title">{{ pdt.type }}</div>
+												<h5 class="card-title">{{ pdt.name}}</h5>
+												<div class="card-price">
+														<span class="card-price-new">₹ {{ pdt.price}}</span>
+												</div>
+												<button class="btn btn-danger">Add to cart</button>
+											</div>
+										</div>
 									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="img/product-furniture-2.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Design</div>
-									<h5 class="card-title">Sideboard</h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 6800.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="img/product-furniture-3.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Light</div>
-									<h5 class="card-title">Home Light</h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 1700.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="img/product-furniture-4.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Design</div>
-									<h5 class="card-title">Cream Chair</h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 2550.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="img/product-furniture-5.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Living Room</div>
-									<h5 class="card-title">Paten</h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 3825.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
+								{%  endfor %}
 					</div>
 				</div>
 			</div>

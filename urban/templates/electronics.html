@@ -216,141 +216,25 @@
 				</div>
 				<div class="col-xl-9 col-lg-8 ps-lg-5 ps-xl-5 ps-xxl-5">
 					<div class="row">
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="img/product-electronics-1.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Laptops</div>
-									<h5 class="card-title">Microsoft Surface Laptop</h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 1,53,000.00</span>
+						{% for pdt in products %}
+									<div class="col-xl-4 col-lg-6">
+										<div class="card product-card">
+											<!-- <a href="#" class="card-media"> -->
+												<img src= "{{pdt.image }}" alt="media">
+				
+				
+											
+											<div class="card-body">
+												<div class="card-sub-title">{{ pdt.type }}</div>
+												<h5 class="card-title">{{ pdt.name}}</h5>
+												<div class="card-price">
+														<span class="card-price-new">₹ {{ pdt.price}}</span>
+												</div>
+												<button class="btn btn-danger">Add to cart</button>
+											</div>
+										</div>
 									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="img/product-electronics-2.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Laptops</div>
-									<h5 class="card-title">Apple MacBook Pro</h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 2,12,415.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="img/product-electronics-3.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">TV & Hi-Fi</div>
-									<h5 class="card-title">Samsung Neo QLED</h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 1,36,000.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="img/product-electronics-4.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Smartphones</div>
-									<h5 class="card-title">OnePlus 9 Pro </h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 46,750.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="img/product-electronics-5.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Smartphones</div>
-									<h5 class="card-title">Apple iPhone 14 Plus</h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 67,915.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="img/product-electronics-6.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Consoles</div>
-									<h5 class="card-title">Xbox Series S</h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 38,250.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="img/product-electronics-1.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Laptops</div>
-									<h5 class="card-title">Microsoft Surface Laptop</h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 1,53,000.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="img/product-electronics-2.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">Laptops</div>
-									<h5 class="card-title">Apple MacBook Pro</h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 2,12,415.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6">
-							<div class="card product-card">
-								<a href="#" class="card-media">
-									<img src="img/product-electronics-3.jpg" alt="media">
-								</a>
-								<div class="card-body">
-									<div class="card-sub-title">TV & Hi-Fi</div>
-									<h5 class="card-title">Samsung Neo QLED</h5>
-									<div class="card-price">
-										<span class="card-price-new">₹ 1,36,000.00</span>
-									</div>
-									<button class="btn btn-danger">Add to cart</button>
-								</div>
-							</div>
-						</div>
+								{%  endfor %}
 					</div>
 				</div>
 			</div>

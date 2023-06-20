@@ -1,6 +1,194 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!DOCTYPE html>
+<html lang="en">
 
+<body>
+	<!-- =====[SECTION PRODUCT GRID]===== -->
+	<section class="section-product-grid">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="mb-5">
+						<ol class="breadcrumb mb-2">
+							<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+							<li class="breadcrumb-item"><a href="#">Shops</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Furniture</li>
+						</ol>
+						<h1 class="h2 title-xl">Furniture</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-between">
+				<div class="col-xl-3 col-lg-4">
+					<div class="card card-widget brand-shadow rounded-1 mb-4">
+						<div class="card-header bg-white py-3">
+							<h4 class="card-title fz-16 text-uppercase fw-bold mb-0">Shop</h4>
+						</div>
+						<div class="card-body py-4">
+							<ul class="list-unstyled mb-0">
+								<li>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="product-1">
+										<label class="form-check-label" for="product-1">Books</label>
+									</div>
+								</li>
+								<li>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="product-2">
+										<label class="form-check-label" for="product-2">Fashion</label>
+									</div>
+								</li>
+								<li>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="product-3">
+										<label class="form-check-label" for="product-3">Electronics</label>
+									</div>
+								</li>
+								<li>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="product-4" checked>
+										<label class="form-check-label" for="product-4">Furniture</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="card card-widget brand-shadow rounded-1 mb-4">
+						<div class="card-header bg-white py-3">
+							<h4 class="card-title fz-16 text-uppercase fw-bold mb-0">Categories</h4>
+						</div>
+						<div class="card-body py-4">
+							<ul class="list-unstyled mb-0">
+								<li>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="product-category-1">
+										<label class="form-check-label" for="product-category-1">Design</label>
+									</div>
+								</li>
+								<li>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="product-category-2">
+										<label class="form-check-label" for="product-category-2">Light</label>
+									</div>
+								</li>
+
+								<li>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="product-category-3">
+										<label class="form-check-label" for="product-category-3">Decorative</label>
+									</div>
+								</li>
+								<li>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="product-category-4">
+										<label class="form-check-label" for="product-category-4">Creative</label>
+									</div>
+								</li>
+								<li>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="product-category-5">
+										<label class="form-check-label" for="product-category-5">Handmade</label>
+									</div>
+								</li>
+								<li>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="product-category-6">
+										<label class="form-check-label" for="product-category-6">Office</label>
+									</div>
+								</li>
+								<li>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="product-category-7">
+										<label class="form-check-label" for="product-category-7">Living Room</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="card card-widget brand-shadow rounded-1 mb-4">
+						<div class="card-header bg-white py-3">
+							<h4 class="card-title fz-16 text-uppercase fw-bold mb-0">Price</h4>
+						</div>
+						<div class="card-body py-4">
+							<ul class="list-unstyled mb-0">
+								<li>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="product-price-1">
+										<label class="form-check-label" for="product-price-1">₹0 - ₹999</label>
+									</div>
+								</li>
+								<li>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="product-price-2">
+										<label class="form-check-label" for="product-price-2">₹1000 - ₹1999</label>
+									</div>
+								</li>
+								<li>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="product-price-3">
+										<label class="form-check-label" for="product-price-3">₹2000 - ₹2999</label>
+									</div>
+								</li>
+								<li>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="product-price-4">
+										<label class="form-check-label" for="product-price-4">₹3000 - ₹3999</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="card card-widget brand-shadow rounded-1 mb-4">
+						<div class="card-header bg-white py-3">
+							<h4 class="card-title fz-16 text-uppercase fw-bold mb-0">Product Status</h4>
+						</div>
+						<div class="card-body py-4">
+							<ul class="list-unstyled mb-0">
+								<li>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="product-status-1">
+										<label class="form-check-label" for="product-status-1">In Stock</label>
+									</div>
+								</li>
+								<li>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="product-status-2">
+										<label class="form-check-label" for="product-status-2">On Sale</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-9 col-lg-8 ps-lg-5 ps-xl-5 ps-xxl-5">
+					<div class="row">
+						{% for pdt in products %}
+									<div class="col-xl-4 col-lg-6">
+										<div class="card product-card">
+											<!-- <a href="#" class="card-media"> -->
+												<img src= "{{pdt.image }}" alt="media">
+				
+				
+											
+											<div class="card-body">
+												<div class="card-sub-title">{{ pdt.type }}</div>
+												<h5 class="card-title">{{ pdt.name}}</h5>
+												<div class="card-price">
+														<span class="card-price-new">₹ {{ pdt.price}}</span>
+												</div>
+												<button class="btn btn-danger">Add to cart</button>
+											</div>
+										</div>
+									</div>
+								{%  endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
 
 {% endblock %}

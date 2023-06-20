@@ -71,7 +71,7 @@
 				</div>
 				<div class="col-lg-3">
 					<div class="card card-category brand-shadow rounded-1 border-0">
-						<a href="fashion.html" class="d-block text-center">
+						<a href="{{ url_for('fashion')}}" class="d-block text-center">
 							<div class="card-media"><img src="{{url_for('static',filename='category-fashion.jpg')}}" alt="media" class="d-block w-100"></div>
 							<div class="card-body">
 								<h6 class="card-title fw-semibold text-uppercase mb-0 py-2">Fashion</h6>
@@ -115,134 +115,22 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-3">
-					<div class="card product-card mb-2">
-						<a href="#" class="card-media">
-							<img src="{{url_for('static',filename='product-book-1.jpg')}}" alt="book image">
-						</a>
-						<div class="card-body">
-							<div class="card-sub-title">Book</div>
-							<h5 class="card-title">Food & Health Journal</h5>
-							<div class="card-price">
-								<span class="card-price-new">₹ 360.00</span>
-							</div>
-							<button class="btn btn-danger">Add to cart</button>
+				{% for pdt in products %}
+					<div class="col-xl-4 col-lg-6">
+						<div class="card product-card">
+							<!-- <a href="#" class="card-media"> -->
+							<img src= "{{pdt.image }}" alt="media">											
+								<div class="card-body">
+									<div class="card-sub-title">{{ pdt.type }}</div>
+									<h5 class="card-title">{{ pdt.name}}</h5>
+									<div class="card-price">
+										<span class="card-price-new">₹ {{ pdt.price}}</span>
+									</div>
+									<button class="btn btn-danger">Add to cart</button>
+								</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="card product-card mb-2">
-						<a href="#" class="card-media">
-							<span class="badge text-bg-danger">Sale</span>
-							<img src="{{url_for('static',filename='product-book-2.jpg')}}"alt="media">
-						</a>
-						<div class="card-body">
-							<div class="card-sub-title">Book</div>
-							<h5 class="card-title">The Art of the Surf</h5>
-							<div class="card-price">
-								<span class="card-price-old">₹ 345.00</span>
-								<span class="card-price-new">₹ 300.00</span>
-							</div>
-							<button class="btn btn-danger">Add to cart</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="card product-card mb-2">
-						<a href="#" class="card-media">
-							<img src="{{url_for('static',filename='product-book-3.jpg')}}"alt="media">
-						</a>
-						<div class="card-body">
-							<div class="card-sub-title">Book</div>
-							<h5 class="card-title">Feelings Are Lost At Sea</h5>
-							<div class="card-price">
-								<span class="card-price-new">₹ 450.00</span>
-							</div>
-							<button class="btn btn-danger">Add to cart</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="card product-card mb-2">
-						<a href="#" class="card-media">
-							<span class="badge text-bg-danger">Sale</span>
-							<img src="{{url_for('static',filename='product-electronics-1.jpg')}}" alt="media">
-						</a>
-						<div class="card-body">
-							<div class="card-sub-title">Electronics</div>
-							<h5 class="card-title">Xiaomi Mi Bluetooth Speaker</h5>
-							<div class="card-price">
-								<span class="card-price-old">₹ 2500.00</span>
-								<span class="card-price-new">₹ 2100.00</span>
-							</div>
-							<button class="btn btn-danger">Add to cart</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="card product-card">
-						<a href="#" class="card-media">
-							<img src="{{url_for('static',filename='product-electronics-2.jpg')}}" alt="media">
-						</a>
-						<div class="card-body">
-							<div class="card-sub-title">Electronics</div>
-							<h5 class="card-title">Apple Watch Nike Series 7</h5>
-							<div class="card-price">
-								<span class="card-price-new">₹ 24500.00</span>
-							</div>
-							<button class="btn btn-danger">Add to cart</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="card product-card">
-						<a href="#" class="card-media">
-							<span class="badge text-bg-danger">Sale</span>
-							<img src="{{url_for('static',filename='product-electronics-3.jpg')}}" alt="media">
-						</a>
-						<div class="card-body">
-							<div class="card-sub-title">Electronics</div>
-							<h5 class="card-title">Samsung Galaxy Watch4 Classic</h5>
-							<div class="card-price">
-								<span class="card-price-old">₹ 22000.00</span>
-								<span class="card-price-new">₹ 20000.00</span>
-							</div>
-							<button class="btn btn-danger">Add to cart</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="card product-card">
-						<a href="#" class="card-media">
-							<span class="badge text-bg-danger">Sale</span>
-							<img src="{{url_for('static',filename='product-fashion-1.jpg')}}" alt="media">
-						</a>
-						<div class="card-body">
-							<div class="card-sub-title">Fashion</div>
-							<h5 class="card-title">Hampton Linen Shirt</h5>
-							<div class="card-price">
-								<span class="card-price-old">₹ 430.00</span>
-								<span class="card-price-new">₹ 400.00</span>
-							</div>
-							<button class="btn btn-danger">Add to cart</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="card product-card">
-						<a href="#" class="card-media">
-							<img src="{{url_for('static',filename='product-fashion-2.jpg')}}" alt="media">
-						</a>
-						<div class="card-body">
-							<div class="card-sub-title">Fashion</div>
-							<h5 class="card-title">Ivy Oversized Tailored Blazer</h5>
-							<div class="card-price">
-								<span class="card-price-new">₹ 640.00</span>
-							</div>
-							<button class="btn btn-danger">Add to cart</button>
-						</div>
-					</div>
-				</div>
+				{%  endfor %}
 			</div>
 		</div>
 	</section>

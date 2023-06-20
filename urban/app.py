@@ -33,13 +33,14 @@ with app.app_context():
 @app.route('/')
 @app.route('/home')
 def index():
-    return render_template('index.html')
+    products = Products.query.all()
+    return render_template('index.html',  products=products)
 
 
 @app.route('/books')
 def books():
     products = Products.query.all()
-    # products = Products.query.filter_by(type="Books")
+    products = Products.query.filter_by(type="Books")
     return render_template('books.html', products=products)
 
 @app.route('/register')
@@ -53,7 +54,7 @@ def contact():
 
 
 @app.route('/login' , methods=['GET', 'POST'])
-# def login():
+def login():
 #     if request.method == 'POST':
 #         username = request.form['username']
 #         password = request.form['password']
@@ -68,7 +69,7 @@ def contact():
 #             error = 'Invalid username or password'
 #             return render_template('login.html', error=error)
 
-#     return render_template('login.html')
+    return render_template('login.html')
 
 
 @app.route('/checkout')
@@ -79,21 +80,31 @@ def checkout():
 def compelete():
     return render_template('compelete.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 
 @app.route('/electronics')
 def electronics():
-    return render_template('electronics.html')
+    products = Products.query.all()
+    products = Products.query.filter_by(type="Electronics")
+    return render_template('electronics.html', products=products)
 
 
 @app.route('/fashion')
 def fashion():
-    return render_template('fashion.html')
+    products = Products.query.all()
+    products = Products.query.filter_by(type="Fashion")
+    return render_template('fashion.html', products=products)
 
 
 
 @app.route('/furniture')
 def furniture():
-    return render_template('furniture.html')
+    products = Products.query.all()
+    products = Products.query.filter_by(type="Furniture")
+    return render_template('furniture.html', products=products)
 
 if __name__ == '__main__':
     app.run(debug=True)
