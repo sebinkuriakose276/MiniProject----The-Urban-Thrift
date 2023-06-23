@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-  
+
 <!DOCTYPE html>
 <html lang="en">
 
 <body>
-
 
 	<!-- =====[SECTION CART]===== -->
 	<section class="section-cart py-5 mb-4">
@@ -40,75 +39,53 @@
 									<div class="text-end fw-bold text-uppercase text-muted">Subtotal</div>
 								</div>
 							</div>
+							{% for pdt in cart_items %}
 							<div class="row align-items-center mb-3 pb-3 border-bottom">
 								<div class="col-1">
-									<button class="btn p-1 lh-1">
-										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+									<button class="btn p-1 lh-1" name="delete_item" data-product-id="{{ pdt.product.id }}" onclick="deleteItem(this)">
+										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+											stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+											class="feather feather-x">
+											<line x1="18" y1="6" x2="6" y2="18"></line>
+											<line x1="6" y1="6" x2="18" y2="18"></line>
+										</svg>
 									</button>
 								</div>
 								<div class="col-5">
-									<div class="fw-medium text-truncate">Microsoft Surface Laptop</div>
+									<div class="fw-medium text-truncate">{{ pdt.product.name }}</div>
 								</div>
 								<div class="col-2">
-									<div class="fw-medium text-end pe-4">₹ 1,53,000.00</div>
+									<div class="fw-medium text-end pe-4">{{ pdt.product.price }}</div>
 								</div>
 								<div class="col-2">
-									<div class="text-center"><input type="number" class="form-control" value="1"></div>
+									<div class="text-center">
+										<input type="number" name="quant_action" class="form-control" data-product-id="{{ pdt.product.id }}" onchange="updateCart(this)"
+											value="{{ pdt.quantity }}" min="0">
+									</div>
 								</div>
 								<div class="col-2">
-									<div class="text-end fw-bold text-danger">₹ 1,53,000.00</div>
+									<div class="text-end fw-bold text-danger">{{
+										pdt.product.price*pdt.quantity }}</div>
 								</div>
 							</div>
-							<div class="row align-items-center mb-3 pb-3 border-bottom">
-								<div class="col-1">
-									<button class="btn p-1 lh-1">
-										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-									</button>
-								</div>
-								<div class="col-5">
-									<div class="fw-medium text-truncate">Food & Health Journal</div>
-								</div>
-								<div class="col-2">
-									<div class="fw-medium text-end pe-4">₹ 360.00</div>
-								</div>
-								<div class="col-2">
-									<div class="text-center"><input type="number" class="form-control" value="2"></div>
-								</div>
-								<div class="col-2">
-									<div class="text-end fw-bold text-danger">₹ 720.00</div>
-								</div>
-							</div>
-							<div class="row align-items-center mb-3">
-								<div class="col-1">
-									<button class="btn p-1 lh-1">
-										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-									</button>
-								</div>
-								<div class="col-5">
-									<div class="fw-medium text-truncate">Vintage Chair</div>
-								</div>
-								<div class="col-2">
-									<div class="fw-medium text-end pe-4">₹ 4,675.00</div>
-								</div>
-								<div class="col-2">
-									<div class="text-center"><input type="number" class="form-control" value="4"></div>
-								</div>
-								<div class="col-2">
-									<div class="text-end fw-bold text-danger">₹ 18,700.00</div>
-								</div>
-							</div>
+							{% endfor %}
+
 						</div>
 					</div>
 					<div class="card border-0 brand-shadow rounded-1 mb-4">
 						<div class="card-body px-5 py-4 my-3">
 							<div class="row align-items-center">
 								<div class="col-lg-3 ">
-									<button class="btn btn-outline-danger rounded-1 fw-medium py-2 w-100 d-block">Continue shopping</button>
+									<button class="btn btn-outline-danger rounded-1 fw-medium py-2 w-100 d-block">Continue
+										shopping</button>
 								</div>
 								<div class="col-lg-5 ms-auto">
 									<div class="row row-discount-panel gx-2">
-										<div class="col-7"><input type="text" class="form-control" placeholder="Coupon Code" style="height: 42px"></div>
-										<div class="col-5"><button class="btn btn-danger rounded-1 text-uppercase fw-medium py-2 w-100 d-block">Apply coupon</button></div>
+										<div class="col-7"><input type="text" class="form-control" placeholder="Coupon Code" id="coupon_code"
+												style="height: 42px"></div>
+										<div class="col-5"><button
+												class="btn btn-danger rounded-1 text-uppercase fw-medium py-2 w-100 d-block" onclick="applyCoupon(this)">Apply
+												coupon</button></div>
 									</div>
 								</div>
 							</div>
@@ -123,20 +100,21 @@
 							<h4 class="card-title fw-semibold mb-4">Cart totals</h4>
 							<div class="d-flex align-items-center justify-content-between">
 								<div class="text-start">Subtotal</div>
-								<div class="text-end">1,72,420.00</div>
+								<div class="text-end" id="subtotal">{{ subtotal }}</div>
 							</div>
 							<hr>
 							<div class="d-flex align-items-center justify-content-between">
 								<div class="text-start">Tax (GST 18%)</div>
-								<div class="text-end">31,035.60</div>
+								<div class="text-end" id="tax">{{ tax }}</div>
 							</div>
 							<hr>
 							<div class="d-flex align-items-center justify-content-between">
 								<div class="text-start fw-bold text-danger h5">Total</div>
-								<div class="text-end fw-bold text-danger h5">2,03,455.60</div>
+								<div class="text-end fw-bold text-danger h5" id="total">{{subtotal+tax}}</div>
 							</div>
 							<div class="pt-5">
-								<button class="btn btn-danger rounded-1 text-uppercase fw-medium py-2 w-100 d-block">Proceed to checkout</button>
+								<button class="btn btn-danger rounded-1 text-uppercase fw-medium py-2 w-100 d-block" onclick="proceedCheckout()">Proceed
+									to checkout</button>
 							</div>
 						</div>
 					</div>
@@ -144,11 +122,99 @@
 			</div>
 		</div>
 	</section>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		function updateCart(inputElement) {
+				var quantity = inputElement.value;
+				var productId = inputElement.getAttribute('data-product-id');
+
+				// Prepare the data to be sent in the AJAX request
+				var data = {
+					quantity: quantity,
+					prod_id: productId
+				};
+
+				// Send an AJAX POST request to the server
+				$.ajax({
+					type: 'POST',
+					url: '/cart_action',
+					data: data,
+					success: function(response) {
+						console.log('Cart updated successfully');
+						location.reload();
+					},
+					error: function(error) {
+						console.log('Error updating cart:', error);
+					}
+				});
+			}
+		function deleteItem(inputElement) {
+				var productId = inputElement.getAttribute('data-product-id');
+
+				// Prepare the data to be sent in the AJAX request
+				var data = {
+					delete_item: true,
+					prod_id: productId
+				};
+
+				// Send an AJAX POST request to the server
+				$.ajax({
+					type: 'POST',
+					url: '/cart_action',
+					data: data,
+					success: function(response) {
+						console.log('Cart updated successfully');
+						location.reload();
+					},
+					error: function(error) {
+						console.log('Error updating cart:', error);
+					}
+				});
+			}
+		function applyCoupon(inputElement) {
+				var code = document.getElementById('coupon_code').value
+
+				// Prepare the data to be sent in the AJAX request
+				var data = {
+					coupon_code:code
+				};
+
+				// Send an AJAX POST request to the server
+				$.ajax({
+					type: 'POST',
+					url: '/cart',
+					data: data,
+					success: function(response) {
+						console.log('Cart updated successfully',response);
+						// location.reload();
+						alert('Coupon applied Succesfully!')
+						document.getElementById('subtotal').innerHTML = response.subtotal
+						document.getElementById('tax').innerHTML = response.tax
+						document.getElementById('total').innerHTML = response.tax + response.subtotal
+					},
+					error: function(error) {
+						console.log('Error updating cart:', error);
+					}
+				});
+			}
+			function proceedCheckout(){
+				total = document.getElementById('total').innerHTML
+				$.ajax({
+					type: 'POST',
+					url: '/checkout',
+					success: function(response) {
+		
+						alert('Payment of Rs '+total+' has been completed!')
+						location.replace('/')
+					},
+					error: function(error) {
+						console.log('Error updating cart:', error);
+					}
+				});
+			}
+	</script>
 </body>
+
 </html>
-  
 
-
-  
 {% endblock %}
-

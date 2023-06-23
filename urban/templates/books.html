@@ -161,14 +161,21 @@
 									<div class="col-xl-4 col-lg-6">
 										<div class="card product-card">
 											<!-- <a href="#" class="card-media"> -->
-												<img src= "{{pdt.image }}" alt="media">
+												<img src= "{{url_for('static', filename=pdt.image) }}" alt="media">
+				
+				
+											
 											<div class="card-body">
 												<div class="card-sub-title">{{ pdt.type }}</div>
 												<h5 class="card-title">{{ pdt.name}}</h5>
 												<div class="card-price">
 														<span class="card-price-new">₹ {{ pdt.price}}</span>
 												</div>
-												<button class="btn btn-danger">Add to cart</button>
+												<form action="/add_to_cart" method="post">
+													<input type="hidden" name="quantity" value="1">
+													<input type="hidden" name="prod_id" value="{{ pdt.id }}">
+													<button class="btn btn-danger">Add to cart</button>
+												</form>
 											</div>
 										</div>
 									</div>

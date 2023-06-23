@@ -61,8 +61,8 @@
 			<div class="row">
 				<div class="col-lg-3">
 					<div class="card card-category brand-shadow rounded-1 border-0">
-						<a href="{{url_for('books')}}" class="d-block text-center">
-							<div class="card-media"><img src="https://i.ibb.co/th3GjsD/category-books.jpg" alt="media" class="d-block w-100"></div>
+						<a href="/category/books" class="d-block text-center">
+							<div class="card-media"><img src="{{url_for('static',filename='category-books.jpg')}}" alt="media" class="d-block w-100"></div>
 							<div class="card-body">
 								<h6 class="card-title fw-semibold text-uppercase mb-0 py-2">Books</h6>
 							</div>
@@ -71,8 +71,8 @@
 				</div>
 				<div class="col-lg-3">
 					<div class="card card-category brand-shadow rounded-1 border-0">
-						<a href="{{ url_for('fashion')}}" class="d-block text-center">
-							<div class="card-media"><img src="https://i.ibb.co/cLWhzxC/category-fashion.jpg" alt="media" class="d-block w-100"></div>
+						<a href="/category/fashion" class="d-block text-center">
+							<div class="card-media"><img src="{{url_for('static',filename='category-fashion.jpg')}}" alt="media" class="d-block w-100"></div>
 							<div class="card-body">
 								<h6 class="card-title fw-semibold text-uppercase mb-0 py-2">Fashion</h6>
 							</div>
@@ -81,8 +81,8 @@
 				</div>
 				<div class="col-lg-3">
 					<div class="card card-category brand-shadow rounded-1 border-0">
-						<a href="{{url_for('electronics')}}" class="d-block text-center">
-							<div class="card-media"><img src="https://i.ibb.co/HCcsFsw/category-electronics.jpg" alt="media" class="d-block w-100"></div>
+						<a href="/category/electronics" class="d-block text-center">
+							<div class="card-media"><img src="{{url_for('static',filename='category-electronics.jpg')}}" alt="media" class="d-block w-100"></div>
 							<div class="card-body">
 								<h6 class="card-title fw-semibold text-uppercase mb-0 py-2">Electronics</h6>
 							</div>
@@ -91,8 +91,8 @@
 				</div>
 				<div class="col-lg-3">
 					<div class="card card-category brand-shadow rounded-1 border-0">
-						<a href="{{url_for('furniture')}}" class="d-block text-center">
-							<div class="card-media"><img src="https://i.ibb.co/TH10MFr/category-furniture.jpg"alt="media" class="d-block w-100"></div>
+						<a href="/category/furniture" class="d-block text-center">
+							<div class="card-media"><img src="{{url_for('static',filename='category-furniture.jpg')}}"alt="media" class="d-block w-100"></div>
 							<div class="card-body">
 								<h6 class="card-title fw-semibold text-uppercase mb-0 py-2">Furniture</h6>
 							</div>
@@ -119,14 +119,18 @@
 					<div class="col-xl-4 col-lg-6">
 						<div class="card product-card">
 							<!-- <a href="#" class="card-media"> -->
-							<img src= "{{pdt.image }}" alt="media">											
+							<img src= "{{url_for('static', filename=pdt.image) }}" alt="media">											
 								<div class="card-body">
 									<div class="card-sub-title">{{ pdt.type }}</div>
 									<h5 class="card-title">{{ pdt.name}}</h5>
 									<div class="card-price">
 										<span class="card-price-new">₹ {{ pdt.price}}</span>
 									</div>
-									<button class="btn btn-danger">Add to cart</button>
+									<form action="/add_to_cart" method="post">
+										<input type="hidden" name="quantity" value="1">
+										<input type="hidden" name="prod_id" value="{{ pdt.id }}">
+										<button class="btn btn-danger">Add to cart</button>
+									</form>
 								</div>
 						</div>
 					</div>
