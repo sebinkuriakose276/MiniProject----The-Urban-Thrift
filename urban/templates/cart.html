@@ -13,7 +13,7 @@
 				<div class="col-12">
 					<div class="mb-5">
 						<ol class="breadcrumb mb-2">
-							<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+							<li class="breadcrumb-item"><a href="{{ url_for('main.index')}}">Home</a></li>
 							<li class="breadcrumb-item active" aria-current="page">Cart</li>
 						</ol>
 						<h1 class="h2 title-xl">Cart</h1>
@@ -76,7 +76,8 @@
 						<div class="card-body px-5 py-4 my-3">
 							<div class="row align-items-center">
 								<div class="col-lg-3 ">
-									<button class="btn btn-outline-danger rounded-1 fw-medium py-2 w-100 d-block">Continue
+									
+									<button class="btn btn-outline-danger rounded-1 fw-medium py-2 w-100 d-block" onclick="returntohome()">Continue
 										shopping</button>
 								</div>
 								<div class="col-lg-5 ms-auto">
@@ -197,6 +198,13 @@
 					}
 				});
 			}
+
+			function returntohome()
+			{
+				location.replace('/')
+			}
+
+
 			function proceedCheckout(){
 				total = document.getElementById('total').innerHTML
 				$.ajax({
@@ -204,8 +212,10 @@
 					url: '/checkout',
 					success: function(response) {
 		
-						alert('Payment of Rs '+total+' has been completed!')
-						location.replace('/')
+						//alert('Payment of Rs '+total+' has been completed!')
+						//return redirect(url_for('checkout'))
+						location.replace('/checkout')
+						//location.replace('/')
 					},
 					error: function(error) {
 						console.log('Error updating cart:', error);
