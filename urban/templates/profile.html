@@ -12,8 +12,8 @@
 					<div class="card card-profile-hero brand-shadow border-0 mb-5">
 						<div class="card-body text-center py-5">
 							<div class="profile-pic mx-auto mb-4 rounded-circle"><img src="img/profile.png" alt="user" class="w-100 d-block rounded-circle"></div>
-							<h4 class="title fw-semibold mb-1">David John</h4>
-							<div class="title-sm text-muted">@david-john</div>
+							<h4 class="title fw-semibold mb-1">Sebin Kuriakose</h4>
+							<div class="title-sm text-muted">@sebin-kuriakose</div>
 							<div class="pt-4">
 								<button type="button" class="btn btn-danger d-inline-flex align-items-center fw-medium py-2 px-5 rounded-1">
 									<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-coin me-2" width="22" height="22" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -44,29 +44,50 @@
 							</div>
 							<div class="row align-items-center mb-4">
 								<div class="col-4 text-muted small">Full name</div>
-								<div class="col-8"><div class="py-2 px-3 border shadow-sm rounded-1">David John</div></div>
+								<div class="col-8"><div class="py-2 px-3 border shadow-sm rounded-1">Sebin Kuriakose</div></div>
 							</div>
 							<div class="row align-items-center mb-4">
 								<div class="col-4 text-muted small">Username</div>
-								<div class="col-8"><div class="py-2 px-3 border shadow-sm rounded-1">david-john</div></div>
+								<div class="col-8"><div class="py-2 px-3 border shadow-sm rounded-1">sebin-kuriakose</div></div>
 							</div>
 							<div class="row align-items-center mb-4">
 								<div class="col-4 text-muted small">Email address</div>
-								<div class="col-8"><div class="py-2 px-3 border shadow-sm rounded-1">david@mymail.com</div></div>
+								<div class="col-8"><div class="py-2 px-3 border shadow-sm rounded-1">sebinkuriakose276@gmail.com</div></div>
 							</div>
 							<div class="row align-items-center">
 								<div class="col-4 text-muted small">Phone number</div>
-								<div class="col-8"><div class="py-2 px-3 border shadow-sm rounded-1">+91 9876543210</div></div>
+								<div class="col-8"><div class="py-2 px-3 border shadow-sm rounded-1">+91 9847824162</div></div>
 							</div>
+						</div>
+						<div class="buttonallign">
+							<button type="button" class="btn btn-danger d-inline-flex align-items-center fw-medium py-2 px-5 rounded-1" onclick="returnhome()">Go to shopping</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+	</section>	
+
+	<script>
+		function returnhome()
+		{
+		 // alert('The Order has been placed!');
+		  location.replace('/')
+		}
+	  </script>
 
 	
 </body>
 </html>
+
+<style>
+	.buttonallign
+	{
+		text-align: center;
+		height:200px;
+   		width:400px;
+		padding-left: 180px;
+	}
+</style>
 
 {% endblock %}

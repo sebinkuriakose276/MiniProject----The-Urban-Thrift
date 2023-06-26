@@ -35,6 +35,10 @@ def books(slug):
 def contact():
     return render_template('contact.html')
 
+@main.route('/profile')
+def profile():
+    return render_template('profile.html')
+
 @main.route('/checkout')
 def checkout():
     return render_template('checkout.html')
