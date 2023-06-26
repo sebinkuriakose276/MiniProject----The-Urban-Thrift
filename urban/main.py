@@ -18,7 +18,7 @@ def index():
     # db.session.commit()
         # new_user = Coupons(code='diwali20', amount='110')
         # db.session.add(new_user)
-        # db.session.commit()
+        # db.session.commit()a
     products = Products.query.all()
     return render_template('index.html',  products=products)
 
@@ -35,8 +35,16 @@ def books(slug):
 def contact():
     return render_template('contact.html')
 
+@main.route('/sell')
+def sell():
+    return render_template('sell.html')
+
+
+
 @main.route('/profile')
+@login_required
 def profile():
+    
     return render_template('profile.html')
 
 @main.route('/checkout')
