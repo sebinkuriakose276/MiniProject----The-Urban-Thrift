@@ -39,6 +39,17 @@ def contact():
 def sell():
     return render_template('sell.html')
 
+@main.route('/sell', methods=['POST'])
+def sell_post():
+    image = request.form.get('image')
+    name = request.form.get('name')
+    price = request.form.get('price')
+    type = request.form.get('type')
+    new_prod = Products(image=image, name=name, price=price, type=type)
+    db.session.add(new_prod)
+    db.session.commit()
+    return redirect(url_for('main.sell'))
+
 
 
 @main.route('/profile')
